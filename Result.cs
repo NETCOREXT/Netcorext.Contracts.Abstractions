@@ -15,8 +15,19 @@ public partial class Result
         return new Result { Code = code };
     }
 
+    public static bool operator ==(Result r1, Result r2)
+    {
+        return r1.Code == r2.Code;
+    }
+
+    public static bool operator !=(Result r1, Result r2)
+    {
+        return r1.Code != r2.Code;
+    }
+
     public virtual Result Clone() => Clone(Code, Message);
     public virtual Result Clone(string? message) => Clone(Code, message);
+
     private static Result Clone(string? code, string? message)
     {
         return new Result
@@ -30,6 +41,26 @@ public partial class Result
     {
         return $"{Code}";
     }
+
+    public override bool Equals(object obj)
+    {
+        var r = obj as Result;
+
+        return Code == r?.Code;
+    }
+
+    protected bool Equals(Result other)
+    {
+        return Code == other.Code;
+    }
+
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            return (Code != null ? Code.GetHashCode() : 0) * 397;
+        }
+    }
 }
 
 public partial class Result<TContent> : Result
@@ -40,6 +71,7 @@ public partial class Result<TContent> : Result
     public virtual Result<TContent> Clone(string? message, TContent? content, Paging? paging) => Clone(Code, message, content, paging);
     public virtual Result<TContent> Clone(TContent? content) => Clone(Code, Message, content, Paging);
     public virtual Result<TContent> Clone(TContent? content, Paging? paging) => Clone(Code, Message, content, paging);
+
     private static Result<TContent> Clone(string? code, string? message, TContent? content, Paging? paging)
     {
         return new Result<TContent>
