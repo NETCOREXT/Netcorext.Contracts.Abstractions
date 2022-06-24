@@ -1,3 +1,5 @@
+using FluentValidation.Results;
+
 namespace Netcorext.Contracts;
 
 public partial class Result
@@ -5,42 +7,15 @@ public partial class Result
     public string? Code { get; set; }
     public string? Message { get; set; }
 
-    public static implicit operator string?(Result r)
-    {
-        return r.Code;
-    }
-
-    public static implicit operator Result(string code)
-    {
-        return new Result { Code = code };
-    }
-
-    public static bool operator ==(Result r1, Result r2)
-    {
-        return r1.Code == r2.Code;
-    }
-
-    public static bool operator !=(Result r1, Result r2)
-    {
-        return r1.Code != r2.Code;
-    }
-
+    public IEnumerable<ValidationFailure>? Errors { get; set; }
+    public static implicit operator string?(Result r) => r.Code;
+    public static implicit operator Result(string code) => new() { Code = code };
+    public static bool operator ==(Result? r1, Result? r2) => r1?.Code == r2?.Code;
+    public static bool operator !=(Result? r1, Result? r2) => r1?.Code != r2?.Code;
     public virtual Result Clone() => Clone(Code, Message);
     public virtual Result Clone(string? message) => Clone(Code, message);
-
-    private static Result Clone(string? code, string? message)
-    {
-        return new Result
-               {
-                   Code = code,
-                   Message = message
-               };
-    }
-
-    public override string ToString()
-    {
-        return $"{Code}";
-    }
+    private static Result Clone(string? code, string? message) => new() { Code = code, Message = message };
+    public override string ToString() => $"{Code}";
 
     public override bool Equals(object obj)
     {
@@ -49,10 +24,7 @@ public partial class Result
         return Code == r?.Code;
     }
 
-    protected bool Equals(Result other)
-    {
-        return Code == other.Code;
-    }
+    protected bool Equals(Result? other) => Code == other?.Code;
 
     public override int GetHashCode()
     {
