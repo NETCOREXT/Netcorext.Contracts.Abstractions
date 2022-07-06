@@ -48,6 +48,8 @@ public partial class Result
 
     public static readonly Result PayloadTooLarge = new() { Code = "413000", Message = "Request body too large." };
 
+    public static readonly Result Locked = new() { Code = "423000", Message = "The resource that is being accessed is locked." };
+
     public static readonly Result InternalServerError = new() { Code = "500000", Message = "Internal Server Error" };
 
     #endregion
@@ -100,6 +102,8 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> Conflict = new() { Code = "409000", Message = "Conflict (409) - The specified resource already exists." };
 
     public new static readonly Result<TContent> PayloadTooLarge = new() { Code = "413000", Message = "Request body too large." };
+
+    public new static readonly Result<TContent> Locked = new() { Code = "423000", Message = "The resource that is being accessed is locked." };
 
     public new static readonly Result<TContent> InternalServerError = new() { Code = "500000", Message = "Internal Server Error" };
 
