@@ -14,13 +14,15 @@ public partial class Result
 
     public static readonly Result SuccessPartialContent = new() { Code = "206000", Message = "The server has successfully processed some GET requests." };
 
-    public static readonly Result InvalidInput = new() { Code = "400000", Message = "Bad Request (400) - One of the request inputs is not valid." };
+    public static readonly Result InvalidInput = new() { Code = "400000", Message = "Bad Request - One of the request inputs is not valid." };
 
-    public static readonly Result OutOfRangeInput = new() { Code = "400001", Message = "Bad Request (400) - One of the request inputs is out of range." };
+    public static readonly Result OutOfRangeInput = new() { Code = "400001", Message = "Bad Request - One of the request inputs is out of range." };
 
-    public static readonly Result Unauthorized = new() { Code = "401000", Message = "Unauthorized (401)" };
+    public static readonly Result Unauthorized = new() { Code = "401000", Message = "Unauthorized" };
 
-    public static readonly Result PaymentRequired = new() { Code = "402000", Message = "Payment Required (402)" };
+    public static readonly Result PaymentRequired = new() { Code = "402000", Message = "Payment Required" };
+
+    public static readonly Result InsufficientBalance = new() { Code = "402001", Message = "Account does not have a sufficient balance available." };
 
     public static readonly Result Forbidden = new() { Code = "403000", Message = "Forbidden." };
 
@@ -44,7 +46,7 @@ public partial class Result
 
     public static readonly Result RequestTimeout = new() { Code = "408000", Message = "This request takes too long to process." };
 
-    public static readonly Result Conflict = new() { Code = "409000", Message = "Conflict (409) - The specified resource already exists." };
+    public static readonly Result Conflict = new() { Code = "409000", Message = "Conflict - The specified resource already exists." };
 
     public static readonly Result PayloadTooLarge = new() { Code = "413000", Message = "Request body too large." };
 
@@ -76,6 +78,8 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> Unauthorized = new() { Code = "401000", Message = "Unauthorized (401)" };
 
     public new static readonly Result<TContent> PaymentRequired = new() { Code = "402000", Message = "Payment Required (402)" };
+    
+    public new static readonly Result<TContent> InsufficientBalance = new() { Code = "402001", Message = "Account does not have a sufficient balance available." };
 
     public new static readonly Result<TContent> Forbidden = new() { Code = "403000", Message = "Forbidden." };
 

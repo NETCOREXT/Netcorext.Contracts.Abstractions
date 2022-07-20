@@ -4,11 +4,11 @@ namespace Netcorext.Contracts;
 
 public partial class Result
 {
-    public string? Code { get; set; }
+    public string Code { get; set; } = null!;
     public string? Message { get; set; }
 
     public IEnumerable<ValidationFailure>? Errors { get; set; }
-    public static implicit operator string?(Result r) => r.Code;
+    public static implicit operator string(Result r) => r.Code;
     public static implicit operator Result(string code) => new() { Code = code };
     public static bool operator ==(Result? r1, Result? r2) => r1?.Code == r2?.Code;
     public static bool operator !=(Result? r1, Result? r2) => r1?.Code != r2?.Code;
@@ -16,7 +16,7 @@ public partial class Result
     public virtual Result Clone(string? message) => Clone(Code, message, Errors);
     public virtual Result Clone(string? message, IEnumerable<ValidationFailure>? errors) => Clone(Code, message, Errors = errors);
     public virtual Result Clone(IEnumerable<ValidationFailure>? errors) => Clone(Code, Message, errors);
-    private static Result Clone(string? code, string? message, IEnumerable<ValidationFailure>? errors) => new() { Code = code, Message = message, Errors = errors};
+    private static Result Clone(string code, string? message, IEnumerable<ValidationFailure>? errors) => new() { Code = code, Message = message, Errors = errors};
     public override string ToString() => $"{Code}";
 
     public override bool Equals(object obj)
@@ -32,7 +32,7 @@ public partial class Result
     {
         unchecked
         {
-            return (Code != null ? Code.GetHashCode() : 0) * 397;
+            return (!string.IsNullOrWhiteSpace(Code) ? Code.GetHashCode() : 0) * 397;
         }
     }
 }
@@ -50,7 +50,7 @@ public partial class Result<TContent> : Result
     public virtual Result<TContent> Clone(IEnumerable<ValidationFailure>? errors, TContent? content) => Clone(Code, Message, errors, content, Paging);
     public virtual Result<TContent> Clone(TContent? content, Paging? paging) => Clone(Code, Message, Errors, content, paging);
     public virtual Result<TContent> Clone(IEnumerable<ValidationFailure>? errors, TContent? content, Paging? paging) => Clone(Code, Message, errors, content, paging);
-    private static Result<TContent> Clone(string? code, string? message, IEnumerable<ValidationFailure>? errors, TContent? content, Paging? paging)
+    private static Result<TContent> Clone(string code, string? message, IEnumerable<ValidationFailure>? errors, TContent? content, Paging? paging)
     {
         return new Result<TContent>
                {
