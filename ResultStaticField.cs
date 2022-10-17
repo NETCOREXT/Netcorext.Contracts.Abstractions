@@ -37,6 +37,7 @@ public partial class Result
     public static readonly Result RequiredTwoFactorAuthenticationBinding = new() { Code = "403005", Message = "Two-factor authentication binding is required" };
 
     public static readonly Result ChangePasswordRequired = new() { Code = "403006", Message = "Required to change your password" };
+    public static readonly Result PermissionChanged = new() { Code = "403007", Message = "Permission has changed, please re-login" };
 
     public static readonly Result NotFound = new() { Code = "404000", Message = "The specified resource does not exist." };
 
@@ -94,6 +95,7 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> RequiredTwoFactorAuthenticationBinding = new() { Code = "403005", Message = "Two-factor authentication binding is required" };
 
     public new static readonly Result<TContent> ChangePasswordRequired = new() { Code = "403006", Message = "Required to change your password" };
+    public new static readonly Result<TContent> PermissionChanged = new() { Code = "403007", Message = "Permission has changed, please re-login" };
 
     public new static readonly Result<TContent> NotFound = new() { Code = "404000", Message = "The specified resource does not exist." };
 
