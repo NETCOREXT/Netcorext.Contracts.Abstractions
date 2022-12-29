@@ -12,6 +12,7 @@ public partial class Result
     public static implicit operator Result(string code) => new() { Code = code };
     public static bool operator ==(Result? r1, Result? r2) => r1?.Code == r2?.Code;
     public static bool operator !=(Result? r1, Result? r2) => r1?.Code != r2?.Code;
+    
     public virtual Result Clone() => Clone(Code, Message, Errors);
     public virtual Result Clone(string? message) => Clone(Code, message, Errors);
     public virtual Result Clone(string? message, IEnumerable<ValidationFailure>? errors) => Clone(Code, message, Errors = errors);

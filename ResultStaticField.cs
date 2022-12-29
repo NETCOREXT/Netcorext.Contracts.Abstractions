@@ -55,6 +55,10 @@ public partial class Result
 
     public static readonly Result InternalServerError = new() { Code = "500000", Message = "Internal Server Error" };
 
+    public static readonly Result BadGateway = new() { Code = "502000", Message = "Bad Gateway" };
+
+    public static readonly Result ServiceUnavailable = new() { Code = "503000", Message = "Service Unavailable" };
+
     #endregion
 }
 
@@ -79,7 +83,7 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> Unauthorized = new() { Code = "401000", Message = "Unauthorized (401)" };
 
     public new static readonly Result<TContent> PaymentRequired = new() { Code = "402000", Message = "Payment Required (402)" };
-    
+
     public new static readonly Result<TContent> InsufficientBalance = new() { Code = "402001", Message = "Account does not have a sufficient balance available." };
 
     public new static readonly Result<TContent> Forbidden = new() { Code = "403000", Message = "Forbidden." };
@@ -95,6 +99,7 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> RequiredTwoFactorAuthenticationBinding = new() { Code = "403005", Message = "Two-factor authentication binding is required" };
 
     public new static readonly Result<TContent> ChangePasswordRequired = new() { Code = "403006", Message = "Required to change your password" };
+
     public new static readonly Result<TContent> PermissionChanged = new() { Code = "403007", Message = "Permission has changed, please re-login" };
 
     public new static readonly Result<TContent> NotFound = new() { Code = "404000", Message = "The specified resource does not exist." };
@@ -112,6 +117,10 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> Locked = new() { Code = "423000", Message = "The resource that is being accessed is locked." };
 
     public new static readonly Result<TContent> InternalServerError = new() { Code = "500000", Message = "Internal Server Error" };
+
+    public new static readonly Result<TContent> BadGateway = new() { Code = "502000", Message = "Bad Gateway" };
+
+    public new static readonly Result<TContent> ServiceUnavailable = new() { Code = "503000", Message = "Service Unavailable" };
 
     #endregion
 }
