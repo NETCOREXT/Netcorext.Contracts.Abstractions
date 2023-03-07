@@ -6,7 +6,7 @@ public partial class Result
 {
     public string Code { get; set; } = null!;
     public string? Message { get; set; }
-
+    public object? State { get; set; }
     public IEnumerable<ValidationFailure>? Errors { get; set; }
     public static implicit operator string(Result r) => r.Code;
     public static implicit operator Result(string code) => new() { Code = code };
