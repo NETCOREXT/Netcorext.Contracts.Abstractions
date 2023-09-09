@@ -4,13 +4,13 @@ public partial class Result
 {
     #region Static Fields
 
-    public static readonly Result Success = new() { Code = "200000", Message = "Success / Ok" };
+    public static readonly Result Success = new() { Code = "200000", Message = "Success / Ok." };
 
-    public static readonly Result SuccessCreated = new() { Code = "201000", Message = "Success Created" };
+    public static readonly Result SuccessCreated = new() { Code = "201000", Message = "Success Created." };
 
     public static readonly Result Accepted = new() { Code = "202000", Message = "The request has been accepted for processing, but the processing has not been completed." };
 
-    public static readonly Result SuccessNoContent = new() { Code = "204000", Message = "Success No Content" };
+    public static readonly Result SuccessNoContent = new() { Code = "204000", Message = "Success No Content." };
 
     public static readonly Result SuccessPartialContent = new() { Code = "206000", Message = "The server has successfully processed some GET requests." };
 
@@ -18,9 +18,9 @@ public partial class Result
 
     public static readonly Result OutOfRangeInput = new() { Code = "400001", Message = "Bad Request - One of the request inputs is out of range." };
 
-    public static readonly Result Unauthorized = new() { Code = "401000", Message = "Unauthorized" };
+    public static readonly Result Unauthorized = new() { Code = "401000", Message = "Unauthorized." };
 
-    public static readonly Result PaymentRequired = new() { Code = "402000", Message = "Payment Required" };
+    public static readonly Result PaymentRequired = new() { Code = "402000", Message = "Payment Required." };
 
     public static readonly Result InsufficientBalance = new() { Code = "402001", Message = "Account does not have a sufficient balance available." };
 
@@ -34,10 +34,11 @@ public partial class Result
 
     public static readonly Result TwoFactorAuthenticationFailed = new() { Code = "403004", Message = "Two-factor authentication failed." };
 
-    public static readonly Result RequiredTwoFactorAuthenticationBinding = new() { Code = "403005", Message = "Two-factor authentication binding is required" };
+    public static readonly Result RequiredTwoFactorAuthenticationBinding = new() { Code = "403005", Message = "Two-factor authentication binding is required." };
 
-    public static readonly Result ChangePasswordRequired = new() { Code = "403006", Message = "Required to change your password" };
-    public static readonly Result PermissionChanged = new() { Code = "403007", Message = "Permission has changed, please re-login" };
+    public static readonly Result RequiredChangePassword = new() { Code = "403006", Message = "Required to change your password." };
+
+    public static readonly Result RequiredLogBackIn = new() { Code = "403007", Message = "Please log back in." };
 
     public static readonly Result NotFound = new() { Code = "404000", Message = "The specified resource does not exist." };
 
@@ -53,11 +54,11 @@ public partial class Result
 
     public static readonly Result Locked = new() { Code = "423000", Message = "The resource that is being accessed is locked." };
 
-    public static readonly Result InternalServerError = new() { Code = "500000", Message = "Internal Server Error" };
+    public static readonly Result InternalServerError = new() { Code = "500000", Message = "Internal Server Error." };
 
-    public static readonly Result BadGateway = new() { Code = "502000", Message = "Bad Gateway" };
+    public static readonly Result BadGateway = new() { Code = "502000", Message = "Bad Gateway." };
 
-    public static readonly Result ServiceUnavailable = new() { Code = "503000", Message = "Service Unavailable" };
+    public static readonly Result ServiceUnavailable = new() { Code = "503000", Message = "Service Unavailable." };
 
     #endregion
 }
@@ -66,13 +67,13 @@ public partial class Result<TContent>
 {
     #region Static Fields
 
-    public new static readonly Result<TContent> Success = new() { Code = "200000", Message = "Success / Ok" };
+    public new static readonly Result<TContent> Success = new() { Code = "200000", Message = "Success / Ok." };
 
-    public new static readonly Result<TContent> SuccessCreated = new() { Code = "201000", Message = "Success Created" };
+    public new static readonly Result<TContent> SuccessCreated = new() { Code = "201000", Message = "Success Created." };
 
     public new static readonly Result<TContent> Accepted = new() { Code = "202000", Message = "The request has been accepted for processing, but the processing has not been completed." };
 
-    public new static readonly Result<TContent> SuccessNoContent = new() { Code = "204000", Message = "Success No Content" };
+    public new static readonly Result<TContent> SuccessNoContent = new() { Code = "204000", Message = "Success No Content." };
 
     public new static readonly Result<TContent> SuccessPartialContent = new() { Code = "206000", Message = "The server has successfully processed some GET requests." };
 
@@ -80,9 +81,9 @@ public partial class Result<TContent>
 
     public new static readonly Result<TContent> OutOfRangeInput = new() { Code = "400001", Message = "Bad Request (400) - One of the request inputs is out of range." };
 
-    public new static readonly Result<TContent> Unauthorized = new() { Code = "401000", Message = "Unauthorized (401)" };
+    public new static readonly Result<TContent> Unauthorized = new() { Code = "401000", Message = "Unauthorized (401)." };
 
-    public new static readonly Result<TContent> PaymentRequired = new() { Code = "402000", Message = "Payment Required (402)" };
+    public new static readonly Result<TContent> PaymentRequired = new() { Code = "402000", Message = "Payment Required (402)." };
 
     public new static readonly Result<TContent> InsufficientBalance = new() { Code = "402001", Message = "Account does not have a sufficient balance available." };
 
@@ -96,11 +97,11 @@ public partial class Result<TContent>
 
     public new static readonly Result<TContent> TwoFactorAuthenticationFailed = new() { Code = "403004", Message = "Two-factor authentication failed." };
 
-    public new static readonly Result<TContent> RequiredTwoFactorAuthenticationBinding = new() { Code = "403005", Message = "Two-factor authentication binding is required" };
+    public new static readonly Result<TContent> RequiredTwoFactorAuthenticationBinding = new() { Code = "403005", Message = "Two-factor authentication binding is required." };
 
-    public new static readonly Result<TContent> ChangePasswordRequired = new() { Code = "403006", Message = "Required to change your password" };
+    public new static readonly Result<TContent> RequiredChangePassword = new() { Code = "403006", Message = "Required to change your password." };
 
-    public new static readonly Result<TContent> PermissionChanged = new() { Code = "403007", Message = "Permission has changed, please re-login" };
+    public new static readonly Result<TContent> RequiredLogBackIn = new() { Code = "403007", Message = "Please log back in." };
 
     public new static readonly Result<TContent> NotFound = new() { Code = "404000", Message = "The specified resource does not exist." };
 
@@ -116,11 +117,11 @@ public partial class Result<TContent>
 
     public new static readonly Result<TContent> Locked = new() { Code = "423000", Message = "The resource that is being accessed is locked." };
 
-    public new static readonly Result<TContent> InternalServerError = new() { Code = "500000", Message = "Internal Server Error" };
+    public new static readonly Result<TContent> InternalServerError = new() { Code = "500000", Message = "Internal Server Error." };
 
-    public new static readonly Result<TContent> BadGateway = new() { Code = "502000", Message = "Bad Gateway" };
+    public new static readonly Result<TContent> BadGateway = new() { Code = "502000", Message = "Bad Gateway." };
 
-    public new static readonly Result<TContent> ServiceUnavailable = new() { Code = "503000", Message = "Service Unavailable" };
+    public new static readonly Result<TContent> ServiceUnavailable = new() { Code = "503000", Message = "Service Unavailable." };
 
     #endregion
 }
