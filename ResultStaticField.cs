@@ -20,6 +20,8 @@ public partial class Result
 
     public static readonly Result Unauthorized = new() { Code = "401000", Message = "Unauthorized." };
 
+    public static readonly Result UnauthorizedAndCannotRefreshToken = new() { Code = "401001", Message = "Unauthorized and cannot refresh token." };
+
     public static readonly Result PaymentRequired = new() { Code = "402000", Message = "Payment Required." };
 
     public static readonly Result InsufficientBalance = new() { Code = "402001", Message = "Account does not have a sufficient balance available." };
@@ -77,13 +79,15 @@ public partial class Result<TContent>
 
     public new static readonly Result<TContent> SuccessPartialContent = new() { Code = "206000", Message = "The server has successfully processed some GET requests." };
 
-    public new static readonly Result<TContent> InvalidInput = new() { Code = "400000", Message = "Bad Request (400) - One of the request inputs is not valid." };
+    public new static readonly Result<TContent> InvalidInput = new() { Code = "400000", Message = "Bad Request - One of the request inputs is not valid." };
 
-    public new static readonly Result<TContent> OutOfRangeInput = new() { Code = "400001", Message = "Bad Request (400) - One of the request inputs is out of range." };
+    public new static readonly Result<TContent> OutOfRangeInput = new() { Code = "400001", Message = "Bad Request - One of the request inputs is out of range." };
 
-    public new static readonly Result<TContent> Unauthorized = new() { Code = "401000", Message = "Unauthorized (401)." };
+    public new static readonly Result<TContent> Unauthorized = new() { Code = "401000", Message = "Unauthorized." };
 
-    public new static readonly Result<TContent> PaymentRequired = new() { Code = "402000", Message = "Payment Required (402)." };
+    public new static readonly Result<TContent> UnauthorizedAndCannotRefreshToken = new() { Code = "401001", Message = "Unauthorized and cannot refresh token." };
+
+    public new static readonly Result<TContent> PaymentRequired = new() { Code = "402000", Message = "Payment Required." };
 
     public new static readonly Result<TContent> InsufficientBalance = new() { Code = "402001", Message = "Account does not have a sufficient balance available." };
 
@@ -111,7 +115,7 @@ public partial class Result<TContent>
 
     public new static readonly Result<TContent> RequestTimeout = new() { Code = "408000", Message = "This request takes too long to process." };
 
-    public new static readonly Result<TContent> Conflict = new() { Code = "409000", Message = "Conflict (409) - The specified resource already exists." };
+    public new static readonly Result<TContent> Conflict = new() { Code = "409000", Message = "Conflict - The specified resource already exists." };
 
     public new static readonly Result<TContent> PayloadTooLarge = new() { Code = "413000", Message = "Request body too large." };
 
