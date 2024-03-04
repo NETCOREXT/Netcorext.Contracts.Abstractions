@@ -4,9 +4,9 @@ public partial class Result
 {
     #region Static Fields
 
-    public static readonly Result Ok = new() { Code = "200000", Message = "Success / Ok." };
+    public static readonly Result Ok = new() { Code = "200000", Message = "OK" };
 
-    public static readonly Result Success = new() { Code = "200000", Message = "Success / Ok." };
+    public static readonly Result Success = new() { Code = "200000", Message = "Success." };
 
     public static readonly Result SuccessCreated = new() { Code = "201000", Message = "Success Created." };
 
@@ -17,6 +17,7 @@ public partial class Result
     public static readonly Result SuccessPartialContent = new() { Code = "206000", Message = "The server has successfully processed some GET requests." };
 
     public static readonly Result InvalidInput = new() { Code = "400000", Message = "Bad Request - One of the request inputs is not valid." };
+
     public static readonly Result BadRequest = new() { Code = "400000", Message = "Bad Request - One of the request inputs is not valid." };
 
     public static readonly Result OutOfRangeInput = new() { Code = "400001", Message = "Bad Request - One of the request inputs is out of range." };
@@ -44,6 +45,7 @@ public partial class Result
     public static readonly Result RequiredChangePassword = new() { Code = "403006", Message = "Required to change your password." };
 
     public static readonly Result RequiredLogBackIn = new() { Code = "403007", Message = "Please log back in." };
+
     public static readonly Result BlockedIp = new() { Code = "403008", Message = "This specified ip is blocked." };
 
     public static readonly Result NotFound = new() { Code = "404000", Message = "The specified resource does not exist." };
@@ -73,9 +75,9 @@ public partial class Result<TContent>
 {
     #region Static Fields
 
-    public new static readonly Result<TContent> Ok = new() { Code = "200000", Message = "Success / Ok." };
+    public new static readonly Result<TContent> Ok = new() { Code = "200000", Message = "OK" };
 
-    public new static readonly Result<TContent> Success = new() { Code = "200000", Message = "Success / Ok." };
+    public new static readonly Result<TContent> Success = new() { Code = "200000", Message = "Success." };
 
     public new static readonly Result<TContent> SuccessCreated = new() { Code = "201000", Message = "Success Created." };
 
@@ -86,6 +88,7 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> SuccessPartialContent = new() { Code = "206000", Message = "The server has successfully processed some GET requests." };
 
     public new static readonly Result<TContent> InvalidInput = new() { Code = "400000", Message = "Bad Request - One of the request inputs is not valid." };
+
     public new static readonly Result<TContent> BadRequest = new() { Code = "400000", Message = "Bad Request - One of the request inputs is not valid." };
 
     public new static readonly Result<TContent> OutOfRangeInput = new() { Code = "400001", Message = "Bad Request - One of the request inputs is out of range." };
@@ -113,6 +116,7 @@ public partial class Result<TContent>
     public new static readonly Result<TContent> RequiredChangePassword = new() { Code = "403006", Message = "Required to change your password." };
 
     public new static readonly Result<TContent> RequiredLogBackIn = new() { Code = "403007", Message = "Please log back in." };
+
     public new static readonly Result<TContent> BlockedIp = new() { Code = "403008", Message = "This specified ip is blocked." };
 
     public new static readonly Result<TContent> NotFound = new() { Code = "404000", Message = "The specified resource does not exist." };
